@@ -2,6 +2,3 @@
 Hackathon project
 
 Lviv platformer game! 
-
-Features:
-None
