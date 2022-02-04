@@ -1,4 +1,7 @@
 # ksr-mlh
 Hackathon project
 
-Lviv platformer game!
+Lviv platformer game! 
+
+Features:
+None
