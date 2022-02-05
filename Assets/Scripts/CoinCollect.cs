@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class CoinCollect : MonoBehaviour
 {
-    private int coins = 0;
-
     [SerializeField] private Text coinsCollected;
-         
+  
+    private int coins = 0;
+             
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Coin"))
