@@ -5,8 +5,9 @@ using UnityEngine;
 public class GetOnBus : MonoBehaviour
 {
     [SerializeField] private int busFare = 5;
+    CoinCollect coincollect;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Bus") && Input.GetKeyDown("space") && GlobalValues.coins >= busFare)
         {

@@ -5,12 +5,12 @@ using UnityEngine.UI;
 
 public static class GlobalValues
 {
-    public static int coins;
+    public static int coins = 0;
 }
 
 public class CoinCollect : MonoBehaviour
 {
-    [SerializeField] private Text coinsCollected;
+    public Text coinsCollected;
              
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -18,7 +18,11 @@ public class CoinCollect : MonoBehaviour
         {
             Destroy(collision.gameObject);
             GlobalValues.coins++;
-            coinsCollected.text = "Coins: " + GlobalValues.coins;
         }
+    }
+
+    private void Update()
+    {
+        coinsCollected.text = "Coins: " + GlobalValues.coins;
     }
 }
