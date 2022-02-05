@@ -5,7 +5,6 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private Transform player;
     private float currentPosX;
-    private Vector3 velocity = Vector3.zero;
     private bool isLevelOn;
 
     private void Awake()
