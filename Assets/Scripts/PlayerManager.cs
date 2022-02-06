@@ -6,6 +6,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private LayerMask jumpableLayer;
     [SerializeField] private GameObject loserMenu;
+    [SerializeField] private GameObject winnerMenu;
     [SerializeField] private GameObject canvas;
     [SerializeField] private CameraController cmrctrl;
     private Rigidbody2D player;
@@ -83,6 +84,13 @@ public class PlayerManager : MonoBehaviour
             transform.position = new Vector3(690f, -170f, -8);
             canvas.SetActive(true);
             loserMenu.SetActive(true);
+            cmrctrl.GetComponent<CameraController>().Pause();
+        }
+        if (collision.gameObject.tag == "Win")
+        {
+            transform.position = new Vector3(690f, -170f, -8);
+            canvas.SetActive(true);
+            winnerMenu.SetActive(true);
             cmrctrl.GetComponent<CameraController>().Pause();
         }
     }
