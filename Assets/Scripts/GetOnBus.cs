@@ -31,9 +31,9 @@ public class GetOnBus : MonoBehaviour
         Rigidbody2D locPlayer = GetComponent<Rigidbody2D>(); 
         transform.position = new Vector2(locPlayer.position.x, locPlayer.position.y + 0.1f);
         locPlayer.bodyType = RigidbodyType2D.Static;
-        collision.gameObject.transform.SetParent(transform);
+        //collision.gameObject.transform.SetParent(transform);
 
-        transform.position = Vector2.MoveTowards(transform.position, endpoint.transform.position, 5);
+        //transform.position = Vector2.MoveTowards(transform.position, endpoint.transform.position, 5);
 
 
     }
