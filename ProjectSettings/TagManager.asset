@@ -4,9 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Coin
+  - Bus
   - Building
   - Umbrella
   - Coffe
+  - Death
+  - Win
   layers:
   - Default
   - TransparentFX
@@ -14,7 +18,7 @@ TagManager:
   - Background
   - Water
   - UI
-  - Buildings
+  - Jumpable
   - 
   - 
   - 
