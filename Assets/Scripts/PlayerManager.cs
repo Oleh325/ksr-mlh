@@ -26,6 +26,7 @@ public class PlayerManager : MonoBehaviour
         collider2d = GetComponent<BoxCollider2D>();
         //StartCoroutine(coffeclock());
         //particle = GameObject.Find("Rain").GetComponent<ParticleSystem>();
+
     }
 
     private void FixedUpdate()
@@ -133,6 +134,4 @@ public class PlayerManager : MonoBehaviour
             yield return new WaitForSeconds(1.0f);
         }
     }
-
-
 }
