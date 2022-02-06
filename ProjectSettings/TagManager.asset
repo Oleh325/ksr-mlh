@@ -7,12 +7,14 @@ TagManager:
   - Coin
   - Bus
   - Building
+  - Umbrella
+  - Coffe
   - Death
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background
   - Water
   - UI
   - Jumpable
