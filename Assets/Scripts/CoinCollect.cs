@@ -15,9 +15,4 @@ public class CoinCollect : MonoBehaviour
             coinsCollected.text = "Coins: " + coins.ToString();
         }
     }
-
-    private void Update()
-    {
-        
-    }
 }
