@@ -5,11 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Building
+  - Umbrella
+  - coffe
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background
   - Water
   - UI
   - Buildings
