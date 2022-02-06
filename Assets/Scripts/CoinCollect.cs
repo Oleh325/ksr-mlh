@@ -1,15 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public static class GlobalValues
-{
-    public static int coins = 0;
-}
-
 public class CoinCollect : MonoBehaviour
 {
+    public int coins = 0;
     public Text coinsCollected;
              
     private void OnTriggerEnter2D(Collider2D collision)
@@ -17,12 +11,13 @@ public class CoinCollect : MonoBehaviour
         if (collision.gameObject.CompareTag("Coin"))
         {
             Destroy(collision.gameObject);
-            GlobalValues.coins++;
+            coins++;
+            coinsCollected.text = "Coins: " + coins.ToString();
         }
     }
 
     private void Update()
     {
-        coinsCollected.text = "Coins: " + GlobalValues.coins;
+        
     }
 }
