@@ -9,6 +9,7 @@ TagManager:
   - Building
   - Umbrella
   - Coffe
+  - Death
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Background
   - Water
   - UI
-  - Buildings
+  - Jumpable
   - 
   - 
   - 
