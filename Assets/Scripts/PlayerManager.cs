@@ -1,4 +1,4 @@
-using UnityEngine;
+    using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -40,4 +40,6 @@ public class PlayerManager : MonoBehaviour
     {
         return Physics2D.BoxCast(collider2d.bounds.center, collider2d.bounds.size, 0f, Vector2.down, 0.1f, buildingsLayer);
     }
+
+
 }
