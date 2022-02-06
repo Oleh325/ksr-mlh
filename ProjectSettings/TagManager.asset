@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - Coin
+  - Bus
   - Building
-  - Death
   layers:
   - Default
   - TransparentFX
@@ -13,7 +14,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Jumpable
+  - Buildings
   - 
   - 
   - 
