@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -11,9 +10,9 @@ public class PlayerManager : MonoBehaviour
     private int coffesec = 0;
     private float jumpForce = 6.0f;
     private int UnmbrelluNum = 0;
-    private float rainchance = 1.0f;
+    private float rainPercent = 1.0f;
     private ParticleSystem particle;
-    private bool check = false;
+    private bool checkUmbrellaUsing = false;
 
 
     private void Awake()
@@ -29,18 +28,19 @@ public class PlayerManager : MonoBehaviour
         
         float horizontalInput = Input.GetAxis("Horizontal");
         if (particle.isPlaying && UnmbrelluNum<=0){
-            check = false;
-            rainchance = 0.5f;
+            checkUmbrellaUsing = false;
+            rainPercent = 0.5f;
         } else if(particle.isPlaying && UnmbrelluNum>0){
-            check = true;
+            checkUmbrellaUsing = true;
+            rainPercent = 1;
         } else {
-            if (check){
+            if (checkUmbrellaUsing){
                 UnmbrelluNum--;
-                check = false;
+                checkUmbrellaUsing = false;
             }
-            rainchance = 1;
+            rainPercent = 1;
         }
-        player.velocity = new Vector2(Input.GetAxis("Horizontal") * speed * rainchance, player.velocity.y);
+        player.velocity = new Vector2(Input.GetAxis("Horizontal") * speed * rainPercent, player.velocity.y);
         
 
         if (horizontalInput > 0.01f)
@@ -57,7 +57,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (Input.GetKeyDown("up") && IsGrounded())
         {
-            player.AddForce(new Vector2(0, jumpForce * rainchance), ForceMode2D.Impulse);
+            player.AddForce(new Vector2(0, jumpForce * rainPercent), ForceMode2D.Impulse);
         }
     }
 
@@ -76,7 +76,7 @@ public class PlayerManager : MonoBehaviour
 
         }
 
-        if (collision.gameObject.CompareTag("coffe")){
+        if (collision.gameObject.CompareTag("Coffe")){
                 Destroy(collision.gameObject);
                 speed = speed * 1.5f;
                 StartCoroutine(coffeclock());
