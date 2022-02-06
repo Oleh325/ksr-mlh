@@ -14,6 +14,7 @@ public class GetOnBus : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         coinsLoc = coincollect.GetComponent<CoinCollect>().coins;
+        
         locPlayer = GetComponent<Rigidbody2D>();
         if (collision.gameObject.CompareTag("Bus") && Input.GetKey("space")
             && coinsLoc >= busFare)
@@ -36,4 +37,5 @@ public class GetOnBus : MonoBehaviour
 
 
     }
+
 }
