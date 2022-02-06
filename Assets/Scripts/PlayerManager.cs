@@ -24,28 +24,34 @@ public class PlayerManager : MonoBehaviour
         anim = GetComponent<Animator>();
         player = GetComponent<Rigidbody2D>();
         collider2d = GetComponent<BoxCollider2D>();
-        StartCoroutine(coffeclock());
-        particle = GameObject.Find("Rain").GetComponent<ParticleSystem>();
+        //StartCoroutine(coffeclock());
+        //particle = GameObject.Find("Rain").GetComponent<ParticleSystem>();
     }
 
     private void FixedUpdate()
     {
         
         float horizontalInput = Input.GetAxis("Horizontal");
-        if (particle.isPlaying && UnmbrelluNum<=0){
-            checkUmbrellaUsing = false;
-            rainPercent = 0.5f;
-        } else if(particle.isPlaying && UnmbrelluNum>0){
-            checkUmbrellaUsing = true;
-            rainPercent = 1;
-        } else {
-            if (checkUmbrellaUsing){
-                UnmbrelluNum--;
-                checkUmbrellaUsing = false;
-            }
-            rainPercent = 1;
-        }
-        player.velocity = new Vector2(Input.GetAxis("Horizontal") * speed * rainPercent, player.velocity.y);
+        //if (particle.isPlaying && UnmbrelluNum <= 0)
+        //{
+        //    checkUmbrellaUsing = false;
+        //    rainPercent = 0.5f;
+        //}
+        //else if (particle.isPlaying && UnmbrelluNum > 0)
+        //{
+        //    checkUmbrellaUsing = true;
+        //    rainPercent = 1;
+        //}
+        //else
+        //{
+        //    if (checkUmbrellaUsing)
+        //    {
+        //        UnmbrelluNum--;
+        //        checkUmbrellaUsing = false;
+        //    }
+        //    rainPercent = 1;
+        //}
+        player.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, player.velocity.y);
         
 
         if (horizontalInput > 0.01f)
@@ -68,7 +74,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (Input.GetKeyDown("up") && IsGrounded())
         {
-            player.AddForce(new Vector2(0, jumpForce * rainPercent), ForceMode2D.Impulse);
+            player.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
         }
     }
 
