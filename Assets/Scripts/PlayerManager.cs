@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     [SerializeField] private float speed;
-    [SerializeField] private LayerMask buildingsLayer;
+    [SerializeField] private LayerMask jumpableLayer;
     [SerializeField] private GameObject loserMenu;
     [SerializeField] private GameObject canvas;
     [SerializeField] private CameraController cmrctrl;
@@ -49,14 +49,14 @@ public class PlayerManager : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics2D.BoxCast(collider2d.bounds.center, collider2d.bounds.size, 0f, Vector2.down, 0.1f, buildingsLayer);
+        return Physics2D.BoxCast(collider2d.bounds.center, collider2d.bounds.size, 0f, Vector2.down, 0.1f, jumpableLayer);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Death")
         {
-            transform.position = new Vector3(690.5f, -170f, -8);
+            transform.position = new Vector3(690f, -170f, -8);
             canvas.SetActive(true);
             loserMenu.SetActive(true);
             cmrctrl.GetComponent<CameraController>().Pause();
