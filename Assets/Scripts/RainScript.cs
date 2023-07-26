@@ -24,7 +24,7 @@ public class RainScript : MonoBehaviour
         if (rainchance <= 6.0f){
             if(!particle.isPlaying){
                 var main = particle.main;
-                main.duration = Random.Range(0.0f, 30.0f);
+                main.duration = Random.Range(10.0f, 30.0f);
                 particle.Play(true);
             }
         }
